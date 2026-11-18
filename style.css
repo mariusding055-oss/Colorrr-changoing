@@ -1,0 +1,35 @@
+:root {
+  --logo-color: rgb(0, 0, 0);
+  --bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+.logo {
+  position: relative;
+  isolation: isolate;
+  width: min(70vw, 400px);
+  aspect-ratio: 400 / 384;
+  background: url("logo.png") center / contain no-repeat;
+}
+
+
+.logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--logo-color);
+  mix-blend-mode: screen;
+  transition: background-color 0.4s ease;
+}
